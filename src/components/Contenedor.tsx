@@ -10,7 +10,6 @@ export default function Contenedor({ children }: ContenedorProps) {
     <div id="contenedor">
       <Header />
       {children}
-      <footer className="footer">Aquí va el footer</footer>
     </div>
   );
 }

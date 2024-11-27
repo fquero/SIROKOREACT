@@ -5,6 +5,7 @@ import Contenedor from "./components/Contenedor";
 import CuponManagerComp from "./components/CuponManagerComp";
 
 import "./styles/main.scss";
+import Footer from "./components/Footer";
 
 function App() {
   const { cm, initialize } = useSirokoStore();
@@ -14,9 +15,12 @@ function App() {
   }, [initialize]);
 
   return (
-    <Contenedor>
-      <CuponManagerComp cm={cm} />
-    </Contenedor>
+    <>
+      <Contenedor>
+        <CuponManagerComp cm={cm} />
+      </Contenedor>
+      <Footer />
+    </>
   );
 }
 export default App;
