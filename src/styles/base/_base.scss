@@ -17,9 +17,6 @@ body {
   font-size: $base-font-size;
   font-family: $base-font;
 
-  display: flex;
-  flex-direction: column;
-
   background-color: $color-background-fallback;
   background-image: url("../assets/img/background-mobile.webp"); //mobile first
   background-position: top;
@@ -77,4 +74,12 @@ body {
       background-image: url("../assets/img/background-desktop-lg-2x.webp");
     }
   }
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  width: 100%;
 }
