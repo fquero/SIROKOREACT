@@ -1,0 +1,15 @@
+@use "../abstracts/index" as *;
+
+#contenedor {
+  width: 81vw;
+  margin: 0 auto;
+  padding: 3.5rem;
+
+  flex: 1;
+
+  @include respond(desktop) {
+    & {
+      width: 94rem;
+    }
+  }
+}

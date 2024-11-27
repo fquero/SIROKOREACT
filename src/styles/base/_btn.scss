@@ -1,0 +1,30 @@
+@use "../abstracts/index" as *;
+
+.btn {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  display: block;
+  color: $color-button-text;
+  background-color: $color-button-bg;
+  padding: 0.7rem;
+  border-radius: 4px;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.1s;
+  cursor: pointer;
+
+  & i {
+    vertical-align: middle;
+    font-size: 3.5rem;
+  }
+
+  &:hover {
+    font-size: 1.7rem;
+  }
+
+  &:active,
+  &:focus {
+    transform: scale(0.99);
+  }
+}

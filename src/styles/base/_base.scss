@@ -1,0 +1,80 @@
+@use "../abstracts/index" as *;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 65.5%; // 1rem = 10px
+}
+
+body {
+  box-sizing: content-box;
+  font-size: $base-font-size;
+  font-family: $base-font;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: $color-background-fallback;
+  background-image: url("../assets/img/background-mobile.webp"); //mobile first
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+
+  color: $color-primary-text;
+
+  // Móvil - pantalla retina (2dppx)
+  @include respond-resolution(phone, 2dppx) {
+    & {
+      background-image: url("../assets/img/background-mobile-2x.webp");
+    }
+  }
+
+  // Tableta - pantalla estándar (1dppx)
+  @include respond-resolution(tablet, 1dppx) {
+    & {
+      background-image: url("../assets/img/background-tablet.webp");
+    }
+  }
+
+  // Tableta - pantalla retina (2dppx)
+  @include respond-resolution(tablet, 2dppx) {
+    & {
+      background-image: url("../assets/img/background-tablet-2x.webp");
+    }
+  }
+
+  // Escritorio - pantalla estándar (1dppx)
+  @include respond-resolution(desktop, 1dppx) {
+    & {
+      background-image: url("../assets/img/background-desktop.webp");
+    }
+  }
+
+  // Escritorio - pantalla retina (2dppx)
+  @include respond-resolution(desktop, 2dppx) {
+    & {
+      background-image: url("../assets/img/background-desktop-2x.webp");
+    }
+  }
+
+  // Escritorio grande - pantalla estándar (1dppx)
+  @include respond-resolution(desktop-lg, 1dppx) {
+    & {
+      background-image: url("../assets/img/background-desktop-lg.webp");
+    }
+  }
+
+  // Escritorio grande - pantalla retina (2dppx)
+  @include respond-resolution(desktop-lg, 2dppx) {
+    & {
+      background-image: url("../assets/img/background-desktop-lg-2x.webp");
+    }
+  }
+}
