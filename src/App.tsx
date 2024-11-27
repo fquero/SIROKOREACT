@@ -1,15 +1,22 @@
-import { useState } from "react";
+import { useEffect } from "react";
+import { cuponData } from "./core/data/cupon";
+import { useSirokoStore } from "./store/SirokoStore";
+import Contenedor from "./components/Contenedor";
+import CuponManagerComp from "./components/CuponManagerComp";
 
-import "./App.css";
+import "./styles/main.scss";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const { cm, initialize } = useSirokoStore();
+
+  useEffect(() => {
+    initialize(cuponData.minutos, cuponData.preguntas);
+  }, [initialize]);
 
   return (
-    <>
-      <h1>Siroko REACT :)</h1>
-    </>
+    <Contenedor>
+      <CuponManagerComp cm={cm} />
+    </Contenedor>
   );
 }
-
 export default App;
