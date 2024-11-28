@@ -1,9 +1,10 @@
+import { PreguntaRadio } from "../clases/PreguntaRadio.js";
 import { Respuesta } from "../types/RespuestaType.js";
 import { IPregunta } from "./IPregunta.js";
 
 export interface ICupon {
   //Devuelve todas las preguntas del cupon
-  getPreguntas(): Array<IPregunta>;
+  getPreguntas(): Array<PreguntaRadio>;
 
   //Devuelve el tiempo de validez del cupon
   getTiempoValidez(): number;

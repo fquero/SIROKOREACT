@@ -33,6 +33,10 @@ export class PreguntaRadio implements IPregunta {
     return this.textoPregunta;
   }
 
+  getOpciones(): Array<Opcion> {
+    return this.opciones;
+  }
+
   renderizarInput(idpregunta: number): ReactNode {
     const form = crearElementoHTML("form", "formulario");
 

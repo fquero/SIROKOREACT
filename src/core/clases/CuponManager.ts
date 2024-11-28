@@ -5,6 +5,7 @@ import { IRespuestasManager } from "../interfaces/IRespuestasManager.js";
 import { crearElementoHTML } from "../utils/crearElementoHTML.js";
 import { iniciarCuentaAtras } from "../utils/cuentaAtras.js";
 import { ControlLocalStorage } from "./ControlLocalStorage.js";
+import { PreguntaRadio } from "./PreguntaRadio.js";
 
 export class CuponManager {
   private cupon: ICupon;
@@ -21,6 +22,27 @@ export class CuponManager {
 
   getControl(): IRespuestasManager {
     return this.respuestas;
+  }
+
+  siguientePregunta(): {
+    idpregunta: number | null;
+    pregunta: PreguntaRadio | null;
+  } {
+    for (const [idpregunta, pregunta] of this.cupon.getPreguntas().entries()) {
+      if (!localStorage.getItem(`SirokoP${idpregunta}`)) {
+        return { idpregunta: idpregunta, pregunta: pregunta };
+      }
+    }
+    return { idpregunta: null, pregunta: null };
+  }
+
+  //Devuelve la siguiente pregunta pendiente de respuesta o null si no queda ninguna
+  /*siguientePregunta(): {idpregunta: number | null, pregunta: IPregunta |null }  {
+    for (const [idpregunta, pregunta] of this.cupon.getPreguntas().entries()) {
+      if (!localStorage.getItem(`SirokoP${idpregunta}`)) {
+        return this._renderizarPregunta(idpregunta, pregunta);
+      }
+    }
   }
 
   /* 

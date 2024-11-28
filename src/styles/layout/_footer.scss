@@ -22,11 +22,12 @@
 
   &__contenido {
     color: $color-footer-text;
-    font-family: "Iconsolata", sans-serif;
+    font-family: $base-font;
     font-size: $base-font-size;
   }
 
-  &__link {
+  &__link,
+  &__link:hover {
     color: $color-footer-link;
     text-decoration: underline;
 
