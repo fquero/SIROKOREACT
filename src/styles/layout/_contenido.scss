@@ -1,0 +1,15 @@
+@use "../abstracts/index" as *;
+
+.contenido {
+  background-color: $color-content-bg;
+  padding: 2rem;
+  border-radius: 5px;
+
+  &__subtitulo {
+    font-family: "Inter", sans-serif;
+    font-size: 1.2rem;
+    color: $color-content-complementary;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+}

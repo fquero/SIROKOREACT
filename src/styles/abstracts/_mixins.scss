@@ -1,0 +1,127 @@
+// MEDIA QUERY MANAGER
+/*
+0 - 600px:      Phone
+600 - 1024px:   Tablet
+1025 - 1440px:  Desktop
+1441px + :      Big Desktop
+
+$breakpoint arguement choices:
+- mobile
+- tablet
+- desktop
+- desktop-lg
+
+1em = 16px
+*/
+@mixin respond($breakpoint) {
+  @if $breakpoint == mobile {
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    } // 600px
+  }
+  @if $breakpoint == tablet {
+    @media only screen and (min-width: 37.5625em) and (max-width: 64em) {
+      @content;
+    } // 601px - 1024px
+  }
+  @if $breakpoint == desktop {
+    @media only screen and (min-width: 64.0625em) and (max-width: 90em) {
+      @content;
+    } // 1025px - 1440px
+  }
+  @if $breakpoint == desktop-lg {
+    @media only screen and (min-width: 90.0625em) {
+      @content;
+    } // 1441px +
+  }
+}
+
+//Resolución y tamaño
+@mixin respond-resolution($breakpoint, $resolution) {
+  @if $breakpoint == mobile {
+    @if $resolution == 2dppx {
+      @media only screen and (max-width: 37.5em) and (resolution: 2dppx) {
+        @content;
+      }
+    }
+    @if $resolution == 1dppx {
+      @media only screen and (max-width: 37.5em) and (resolution: 1dppx) {
+        @content;
+      }
+    }
+  }
+  @if $breakpoint == tablet {
+    @if $resolution == 2dppx {
+      @media only screen and (min-width: 37.5625em) and (max-width: 64em) and (resolution: 2dppx) {
+        @content;
+      }
+    }
+    @if $resolution == 1dppx {
+      @media only screen and (min-width: 37.5625em) and (max-width: 64em) and (resolution: 1dppx) {
+        @content;
+      }
+    }
+  }
+  @if $breakpoint == desktop {
+    @if $resolution == 2dppx {
+      @media only screen and (min-width: 64.0625em) and (max-width: 90em) and (resolution: 2dppx) {
+        @content;
+      }
+    }
+    @if $resolution == 1dppx {
+      @media only screen and (min-width: 64.0625em) and (max-width: 90em) and (resolution: 1dppx) {
+        @content;
+      }
+    }
+  }
+  @if $breakpoint == desktop-lg {
+    @if $resolution == 2dppx {
+      @media only screen and (min-width: 90.0625em) and (resolution: 2dppx) {
+        @content;
+      }
+    }
+    @if $resolution == 1dppx {
+      @media only screen and (min-width: 90.0625em) and (resolution: 1dppx) {
+        @content;
+      }
+    }
+  }
+}
+
+//Animaciones
+@mixin fundido($duration: 3s, $timing: ease-in-out) {
+  @keyframes fundido {
+    0% {
+      opacity: 0;
+    }
+    40% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1);
+    }
+  }
+
+  & {
+    animation: fundido $duration $timing;
+  }
+}
+
+@mixin logo-spin {
+  @keyframes logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  & {
+    animation: logo-spin infinite 5s linear;
+  }
+}

@@ -1,0 +1,39 @@
+@use "../abstracts/index" as *;
+
+.footer {
+  background-color: $color-footer-bg;
+  color: $color-footer-text;
+  line-height: 2.5;
+  width: 100%;
+
+  &__contenedor {
+    max-width: 80vw;
+    margin: 0 auto;
+    padding: 5rem 3.5rem;
+
+    @include respond(desktop) {
+      @include respond(desktop-lg) {
+        & {
+          max-width: 94rem;
+        }
+      }
+    }
+  }
+
+  &__contenido {
+    color: $color-footer-text;
+    font-family: $base-font;
+    font-size: $base-font-size;
+  }
+
+  &__link,
+  &__link:hover {
+    color: $color-footer-link;
+    text-decoration: underline;
+
+    &:hover {
+      color: $color-footer-link;
+      text-decoration: none;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+@use "../abstracts/index" as *;
+
+.encabezado {
+  margin-bottom: 2.5rem;
+
+  &__indicador {
+    font-family: $secondary-font;
+    font-size: 1rem;
+    font-weight: 700;
+    color: $color-complementary-dark;
+    text-transform: uppercase;
+
+    display: inline-block;
+
+    background-color: $color-complementary-light;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+  }
+
+  &__titulo {
+    font-family: "Liberator SIROKO", sans-serif;
+    font-size: 3.5rem;
+    color: $color-primary-text;
+    text-transform: uppercase;
+    margin: 1rem 0 2rem;
+  }
+
+  &__contenido {
+    font-size: $base-font-size;
+    font-family: $base-font;
+  }
+}

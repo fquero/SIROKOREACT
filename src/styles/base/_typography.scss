@@ -1,0 +1,21 @@
+/*@font-face {
+  font-family: "LiberatorSiroko";
+  src: url("../fonts/LiberatorSiroko.woff2") format("woff2"),
+    url("../fonts/LiberatorSiroko.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+*/
+
+@font-face {
+  font-family: "Liberator SIROKO";
+  src: url("../assets/fonts/LiberatorSIROKO-Heavy.woff2");
+  src: url("../assets/fonts/LiberatorSIROKO-Heavy.eot?#iefix")
+      format("embedded-opentype"),
+    url("../assets/fonts/LiberatorSIROKO-Heavy.woff2") format("woff2"),
+    url("../assets/fonts/LiberatorSIROKO-Heavy.woff") format("woff"),
+    url("../assets/fonts/LiberatorSIROKO-Heavy.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
