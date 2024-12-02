@@ -76,10 +76,12 @@
     background-color: $color-warning-bg;
     color: $color-warning-text;
     font-size: 1.8rem;
-    display: none;
+    //display: none;
 
-    &__reiniciar {
+    &__reiniciar,
+    &__reiniciar:hover {
       color: $color-warning-text;
+      text-decoration: underline;
     }
   }
 }

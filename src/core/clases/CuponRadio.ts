@@ -88,12 +88,8 @@ export class CuponRadio implements ICupon {
     //Codigo
     localStorage.setItem("codigoCupon", codigo);
 
-    //Hora HH:mm
-    const hora: string = `${fecha
-      .getHours()
-      .toString()
-      .padStart(2, "0")}:${fecha.getMinutes().toString().padStart(2, "0")}`;
-    localStorage.setItem("horaCupon", hora);
+    //Fecha
+    localStorage.setItem("fechaCupon", Date.now().toString());
 
     return true;
   }

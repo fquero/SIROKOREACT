@@ -80,4 +80,11 @@ export class ControlLocalStorage implements IRespuestasManager {
       return false;
     }
   }
+
+  limpiar(): boolean {
+    this.respuestas.forEach((respuesta) => {
+      localStorage.removeItem(respuesta.idpregunta);
+    });
+    return true;
+  }
 }

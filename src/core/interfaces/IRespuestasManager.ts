@@ -22,4 +22,7 @@ export interface IRespuestasManager {
     nombre: string,
     valor: string | number | boolean | null
   ): boolean;
+
+  //elimina las variables del sistema de persistencia que use
+  limpiar(): boolean;
 }
